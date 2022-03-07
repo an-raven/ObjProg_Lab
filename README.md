@@ -8,7 +8,8 @@ Programa skaiciuoja studentu galutinius pazymius pagal ju pazymiu vidurki ir egz
 
 Komandinej eilutej parasyti:
 
-1. "g++ -c mainvector.cpp
-2. "g++ -c studentasvector.cpp
-3. "g++ -o ObjProgLab_V0.2.exe mainvector.o studentasvector.o"
-4. Paleisti ObjProg_Lab_V0.2.exe faila
+1. "g++ -c mainvector.cpp"
+2. "g++ -c studentasvector.cpp"
+3. "g++ -c funkcijos.cpp"
+4. "g++ -o ObjProgLab_V0.2.exe mainvector.o studentasvector.o funkcijos.o"
+5. Paleisti ObjProg_Lab_V0.2.exe faila
