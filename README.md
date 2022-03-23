@@ -2,7 +2,7 @@
 
 ## Programos aprasymas
 
-Programa skaiciuoja studentu galutinius pazymius pagal ju pazymiu vidurki ir egzamino pazymi, arba pagal pazymiu mediana ir egzamino pazymi. Duomenis galima ivesti patiems arba nuskaityti is failo.
+Programa sugeneruoja studentu namu darbus ir egzamino pazymius, juos nuskaito ir isveda galutinius pazymius. Studentus padalija i dvi grupes: islaikiusius ir neislaikiusius. Rezultatai isvedami i faila. Programa raso kiek kiekvienas zingsnis uztruko laiko.
 
 ## Paleidimas
 
