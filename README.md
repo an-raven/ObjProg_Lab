@@ -6,7 +6,7 @@ Programa sugeneruoja studentu namu darbus ir egzamino pazymius, juos nuskaito ir
 
 Studentus padalija i dvi grupes: islaikiusius ir neislaikiusius. Rezultatai isvedami i faila. Programa raso kiek laiko uzeme skaitymas is failo ir studentu skirstymas i grupes.
 
-Prideta "Rule of Three": destructor, copy constructor ir copy assignment operator.
+Prideta bazine klase Person, is kurios isvesta Studentas. Bazine klase taip pat padaryta abstrakciaja.
 
 ## Paleidimas
 
