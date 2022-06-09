@@ -6,31 +6,18 @@ Programa sugeneruoja studentu namu darbus ir egzamino pazymius, juos nuskaito ir
 
 Studentus padalija i dvi grupes: islaikiusius ir neislaikiusius. Rezultatai isvedami i faila. Programa raso kiek laiko uzeme skaitymas is failo ir studentu skirstymas i grupes.
 
-Skirstymas realizuotas trijais budais su std::list, std::vector ir std::deque :
-
-1. Bendro studentai konteinerio skaidymas i du naujus to paties tipo konteinerius
-2. Bendro studentu konteinerio skaidymas panaudojant tik viena konteineri
-3. Isrikiuojant studentu konteineri ir perkeliant neislaikiusius i kita konteineri, istrinant is studentu konteinerio (Mano sugalvotas budas is pradziu, surikiavus konteineri reikia pareiti tik apie puse studentu, tada prasideda islaikiusieji ir skaidyma galima stabdyti (Leciau veikia negu kiti, bet pazymiai buna isrikiuoti))
-
 ## Programos spartumo analize
 
-| List        | 100000      | 1000000     | 10000000    |
-| ----------- | ----------- | ----------- | ----------- |
-| 1 budas     | 0.0355s       | 0.3584s     | 3.4389s    |
-| 2 budas     | 0.0407s     | 0.4237s    | 4.0646s          |
-| 3 budas     | 0.0518s     | 0.6475s    | 6.8626           |
+Panaudota V1.0 versijos vector programa su 3 rusiavimo budu (Aprasa galima rasti V1.0 branch'e)  
 
-| Deque       | 100000      | 1000000     | 10000000    |
-| ----------- | ----------- | ----------- | ----------- |
-| 1 budas     | 0.0238s      | 0.2088s     | 3.6714s    |
-| 2 budas     | 0.0392s     | 0.3663s    |   5.1635s     |
-| 3 budas     | 0.19s     | 2.8627s    |     32.0869        |
+|             | 1000000     | 10000000    |
+| ----------- | ----------- | ----------- |
+| V1.0 vector | 0.22s       | 2.5484s     |
+| Class       | 0.4436s     | 5.1748s     |
+| -O1 class   | 0.4059s     | 4.344s      |
+| -O2 class   | 0.3722s     | 4.3409      |
+| -O3 class   | 0.3498s     | 4.4041      |
 
-| Vector      | 100000      | 1000000     | 10000000    |
-| ----------- | ----------- | ----------- | ----------- |
-| 1 budas     | 0.0272s       | 0.3401s     | 2.7002s    |
-| 2 budas     | 0.0237s    | 0.2690s   |    2.6788s         |
-| 3 budas     | 0.22s     | 2.5484    |    26.5656s         |
 
 ## Sistemos parametrai
 
@@ -43,7 +30,7 @@ HDD: 256GB M.2 2280 NVMe SSD (WDC PC SN720 SDAPNTW-256G)
 
 ## Paleidimas
 
-Aplankale vector, list arba deque komandinej eilutej parasyti:
+Komandineje eiluteje parasyti:
 
 1. "cmake ."
 2. "cmake build"
