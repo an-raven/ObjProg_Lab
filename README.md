@@ -6,32 +6,45 @@ Programa sugeneruoja studentu namu darbus ir egzamino pazymius, juos nuskaito ir
 
 Studentus padalija i dvi grupes: islaikiusius ir neislaikiusius. Rezultatai isvedami i faila. Programa raso kiek laiko uzeme skaitymas is failo ir studentu skirstymas i grupes.
 
+Skirstymas realizuotas trijais budais su std::list, std::vector ir std::deque :
+
+1. Bendro studentai konteinerio skaidymas i du naujus to paties tipo konteinerius
+2. Bendro studentu konteinerio skaidymas panaudojant tik viena konteineri
+3. Isrikiuojant studentu konteineri ir perkeliant neislaikiusius i kita konteineri, istrinant is studentu konteinerio (Mano sugalvotas budas is pradziu, surikiavus konteineri reikia pareiti tik apie puse studentu, tada prasideda islaikiusieji ir skaidyma galima stabdyti (Leciau veikia negu kiti, bet pazymiai buna isrikiuoti))
+
 ## Programos spartumo analize
 
-| Nuskaitymas | 1000        | 10000       | 100000      | 1000000     | 10000000    |
-| ----------- | ----------- |------------ | ----------- | ----------- | ----------- |
-| Deque       |  0.0096s    | 0.04023s    | 0.19s       | 1.6984s     | 19.2925s    |
-| List        |  0.0096s    | 0.03601s    | 0.2928s     | 2.9071s     | 24.1068s    |
-| Vector      |  0.0092s    | 0.0308s     | 0.2221s     | 1.8795s     | 18.3123s    |
+| List        | 100000      | 1000000     | 10000000    |
+| ----------- | ----------- | ----------- | ----------- |
+| 1 budas     | 0.0355s       | 0.3584s     | 3.4389s    |
+| 2 budas     | 0.0407s     | 0.4237s    | 4.0646s          |
+| 3 budas     | 0.0518s     | 0.6475s    | 6.8626           |
 
-| Dalijimas   | 1000        | 10000       | 100000      | 1000000     | 10000000    |
-| ----------- | ----------- |------------ | ----------- | ----------- | ----------- |
-| Deque       |  0.0013s    | 0.0159 s    | 0.2032s     | 2.8   s     | 32.9s       |
-| List        |  0.0003s    | 0.0048 s    | 0.0515s     | 0.6135s     | 7.1953s     |
-| Vector      |  0.0011s    | 0.0136s     | 0.2116s     | 2.7025s     | 26.9287s    |
+| Deque       | 100000      | 1000000     | 10000000    |
+| ----------- | ----------- | ----------- | ----------- |
+| 1 budas     | 0.0238s      | 0.2088s     | 3.6714s    |
+| 2 budas     | 0.0392s     | 0.3663s    |   5.1635s     |
+| 3 budas     | 0.19s     | 2.8627s    |     32.0869        |
+
+| Vector      | 100000      | 1000000     | 10000000    |
+| ----------- | ----------- | ----------- | ----------- |
+| 1 budas     | 0.0272s       | 0.3401s     | 2.7002s    |
+| 2 budas     | 0.0237s    | 0.2690s   |    2.6788s         |
+| 3 budas     | 0.22s     | 2.5484    |    26.5656s         |
 
 ## Sistemos parametrai
 
-CPU: Intel(R) Core(TM) i5-8300H CPU @ 2.30GHz   2.30 GHz
-RAM: 16GB DDR4
-HDD: 256GB M.2 2280 NVMe SSD (WDC PC SN720 SDAPNTW-256G)
+CPU: Intel(R) Core(TM) i5-8300H CPU @ 2.30GHz   2.30 GHz  
+
+RAM: 16GB DDR4  
+
+HDD: 256GB M.2 2280 NVMe SSD (WDC PC SN720 SDAPNTW-256G)  
+
 
 ## Paleidimas
 
 Aplankale vector, list arba deque komandinej eilutej parasyti:
 
-1. "g++ -c mainvector.cpp"
-2. "g++ -c studentasvector.cpp"
-3. "g++ -c funkcijos.cpp"
-4. "g++ -o ObjProgLab_V0.5.exe mainvector.o studentasvector.o funkcijos.o"
-5. Paleisti ObjProg_Lab_V0.5.exe faila
+1. "cmake ."
+2. "cmake build"
+5. Paleisti Pazymiai.exe faila
